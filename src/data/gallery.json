@@ -1,0 +1,21 @@
+{
+  "timeline": [
+    { "year": "2021", "title": "The First Trip", "description": "A small group of 6 strangers hiked Skandagiri. That night, a community was born." },
+    { "year": "2022", "title": "Crossing 50 Trips", "description": "We curated experiences across Karnataka and Kerala — from misty hills to hidden coves." },
+    { "year": "2023", "title": "300+ Travelers Strong", "description": "A real community of working professionals who trust us with their weekends." },
+    { "year": "2024", "title": "Hidden Gems Series", "description": "We launched our signature offbeat trails — places no tourist map will ever show." },
+    { "year": "2025", "title": "Going Cinematic", "description": "Every trip now comes with a curated photo & film story. Your memories, beautifully captured." },
+    { "year": "2026", "title": "500+ Stories Created", "description": "Half a thousand professionals. One unforgettable weekend at a time." }
+  ],
+  "memories": [
+    { "id": 1, "trip": "Coorg Monsoon", "date": "Aug 2025", "location": "Coorg", "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80", "caption": "When the rain stopped, the sky gave us this." },
+    { "id": 2, "trip": "Skandagiri Night", "date": "Jul 2025", "location": "Chikballapur", "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80", "caption": "Climbed at midnight. Watched the sunrise above the clouds." },
+    { "id": 3, "trip": "Gokarna Camp", "date": "Jun 2025", "location": "Gokarna", "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80", "caption": "Bonfire, guitar, ocean. Strangers became family." },
+    { "id": 4, "trip": "Chikmagalur Trails", "date": "May 2025", "location": "Chikmagalur", "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80", "caption": "Coffee, mountains and morning fog." },
+    { "id": 5, "trip": "Hampi Boulders", "date": "Apr 2025", "location": "Hampi", "image": "https://images.unsplash.com/photo-1600004617638-d75ac0b2c95c?w=1200&q=80", "caption": "Walking through ruins built by emperors." },
+    { "id": 6, "trip": "Munnar Mornings", "date": "Mar 2025", "location": "Munnar", "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80", "caption": "The tea hills woke up before we did." },
+    { "id": 7, "trip": "Nandi Sunrise", "date": "Feb 2025", "location": "Nandi Hills", "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&q=80", "caption": "First trip of the year. Best one yet." },
+    { "id": 8, "trip": "Ramanagara Camp", "date": "Jan 2025", "location": "Ramanagara", "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80", "caption": "Rappelled down. Made memories that won't fade." },
+    { "id": 9, "trip": "Ooty Pines", "date": "Dec 2024", "location": "Ooty", "image": "https://images.unsplash.com/photo-1597149452039-26ed03b1e0f5?w=1200&q=80", "caption": "The pine forest felt like another planet." }
+  ]
+}

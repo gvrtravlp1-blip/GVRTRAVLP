@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Nandi Hills Sunrise Trek",
+    "location": "Nandi Hills, near Bangalore",
+    "duration": "1 Day",
+    "price": "₹999",
+    "groupSize": 6,
+    "remainingSlots": 2,
+    "difficulty": "Easy",
+    "highlights": ["Sunrise viewpoint", "Cloud carpets", "Tipu's drop", "Breakfast included"],
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80"
+  },
+  {
+    "id": 2,
+    "title": "Skandagiri Night Trek",
+    "location": "Chikballapur, Karnataka",
+    "duration": "1 Night",
+    "price": "₹1,499",
+    "groupSize": 6,
+    "remainingSlots": 1,
+    "difficulty": "Moderate",
+    "highlights": ["Moonlight trek", "Star gazing", "Cloud sunrise", "Fort ruins"],
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80"
+  },
+  {
+    "id": 3,
+    "title": "Anthargange Caves",
+    "location": "Kolar, Karnataka",
+    "duration": "1 Day",
+    "price": "₹1,299",
+    "groupSize": 6,
+    "remainingSlots": 3,
+    "difficulty": "Moderate",
+    "highlights": ["Cave exploration", "Boulder climbing", "Volcanic rocks", "Adventure photography"],
+    "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80"
+  },
+  {
+    "id": 4,
+    "title": "Ramanagara Adventure Camp",
+    "location": "Ramanagara, Karnataka",
+    "duration": "2 Days / 1 Night",
+    "price": "₹2,799",
+    "groupSize": 6,
+    "remainingSlots": 4,
+    "difficulty": "Moderate",
+    "highlights": ["Rappelling", "Riverside camping", "Bonfire", "Rock climbing"],
+    "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80"
+  },
+  {
+    "id": 5,
+    "title": "Savandurga Trek",
+    "location": "Magadi, Karnataka",
+    "duration": "1 Day",
+    "price": "₹1,199",
+    "groupSize": 6,
+    "remainingSlots": 2,
+    "difficulty": "Hard",
+    "highlights": ["Asia's largest monolith", "360° views", "Temple visit", "Adrenaline climb"],
+    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&q=80"
+  },
+  {
+    "id": 6,
+    "title": "Mysore Heritage Weekend",
+    "location": "Mysore, Karnataka",
+    "duration": "2 Days / 1 Night",
+    "price": "₹3,499",
+    "groupSize": 6,
+    "remainingSlots": 5,
+    "difficulty": "Easy",
+    "highlights": ["Mysore Palace", "Chamundi Hills", "Brindavan Gardens", "Royal cuisine"],
+    "image": "https://images.unsplash.com/photo-1599661046827-9a64bb68a8b8?w=1200&q=80"
+  }
+]
