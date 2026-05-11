@@ -4,14 +4,15 @@ import monthly from "@/data/monthlyTrips.json";
 import weekend from "@/data/weekendTrips.json";
 import { TripCard, type Trip } from "@/components/TripCard";
 import { SectionTitle } from "@/components/ui-bits";
+import { siteConfig } from "@/config/site";
 import roadImg from "@/assets/road-trip.jpg";
 
 export const Route = createFileRoute("/trips")({
   head: () => ({
     meta: [
-      { title: "Upcoming Trips — WandrStories" },
+      { title: siteConfig.name },
       { name: "description", content: "Browse upcoming monthly adventures and weekend escapes around Bangalore & Hyderabad." },
-      { property: "og:title", content: "Upcoming Trips — WandrStories" },
+      { property: "og:title", content: siteConfig.name },
       { property: "og:description", content: "Curated weekend escapes and monthly adventures." },
     ],
   }),
@@ -24,7 +25,7 @@ function TripsPage() {
 
   return (
     <>
-      <header className="relative overflow-hidden pt-32 pb-16">
+      <header className="relative overflow-hidden pt-24 pb-8 md:pt-28 md:pb-12">
         <div className="absolute inset-0 -z-10">
           <img src={roadImg} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
@@ -32,43 +33,43 @@ function TripsPage() {
         <div className="container-cinema px-6 md:px-10">
           <motion.span
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-xs uppercase tracking-[0.3em] text-[oklch(0.7_0.19_50)]"
+            className="text-[10px] uppercase tracking-[0.4em] text-primary font-bold"
           >Upcoming escapes</motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-            className="mt-3 font-display text-5xl leading-[1.05] md:text-7xl"
+            className="mt-2 font-display text-4xl leading-[1.05] md:text-6xl"
           >
             Pick your <span className="text-gradient-sunset">next weekend.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
-            className="mt-5 max-w-xl text-muted-foreground md:text-lg"
+            className="mt-3 max-w-xl text-sm text-muted-foreground md:text-base"
           >
-            Monthly adventures for groups up to 20. Weekend escapes for tight crews of 6. Both, equally cinematic.
+            Monthly adventures and weekend escapes. Equally cinematic.
           </motion.p>
         </div>
       </header>
 
-      <section className="section-padding pt-12">
+      <section className="px-6 pt-0 pb-16 md:px-10">
         <div className="container-cinema">
           <SectionTitle center={false} eyebrow="Monthly Adventures" title="Long-form journeys, deep stories." subtitle="Multi-day trips with up to 20 fellow travelers. Time slows down. Friendships form." />
           {monthlyTrips.length === 0 ? (
             <EmptyState text="New monthly adventures coming soon." />
           ) : (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3">
               {monthlyTrips.map((t) => <TripCard key={t.id} trip={t} variant="monthly" />)}
             </div>
           )}
         </div>
       </section>
 
-      <section className="section-padding bg-[oklch(0.11_0.012_150)]">
+      <section className="px-6 py-12 md:px-10 md:py-16 bg-white/[0.02]">
         <div className="container-cinema">
           <SectionTitle center={false} eyebrow="Weekend Escapes" title="Tight crews. Limited seats. Big stories." subtitle="Small curated groups of 5–6. Designed for spontaneity, depth, and the kind of weekends Mondays remember." />
           {weekendTrips.length === 0 ? (
             <EmptyState text="No weekend escapes scheduled right now." />
           ) : (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3">
               {weekendTrips.map((t) => <TripCard key={t.id} trip={t} variant="weekend" />)}
             </div>
           )}

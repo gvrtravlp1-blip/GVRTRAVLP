@@ -9,9 +9,9 @@ import { siteConfig } from "@/config/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — WandrStories" },
+      { title: siteConfig.name },
       { name: "description", content: "Plan your next weekend escape. Reach us on WhatsApp or share a trip suggestion." },
-      { property: "og:title", content: "Contact — WandrStories" },
+      { property: "og:title", content: siteConfig.name },
       { property: "og:description", content: "Tell us where you want to go." },
     ],
   }),
@@ -62,7 +62,7 @@ function ContactPage() {
 
       <div className="container-cinema relative grid gap-12 px-6 pb-32 md:grid-cols-2 md:px-10">
         <div>
-          <span className="text-xs uppercase tracking-[0.3em] text-[oklch(0.78_0.18_55)]">Say hello</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[oklch(0.82_0.16_85)]">Say hello</span>
           <h1 className="mt-3 font-display text-5xl leading-[1.05] md:text-7xl">
             Tell us where you <span className="text-gradient-sunset">want to go.</span>
           </h1>
@@ -70,25 +70,31 @@ function ContactPage() {
             Share a trip idea, ask a question, or just say hi. We reply on WhatsApp — usually within an hour.
           </p>
           <div className="mt-10 space-y-3">
-            <a href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl glass p-4 transition hover:bg-white/10">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-[oklch(0.55_0.16_150)] text-background"><MessageCircle className="h-4 w-4" /></div>
+            <a href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" rel="noreferrer" className="group flex items-center gap-4 rounded-2xl glass p-5 transition hover:bg-white/[0.08] hover:border-white/20">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[oklch(0.42_0.08_190)] to-[oklch(0.3_0.06_190)] text-white shadow-[0_8px_20px_-6px_oklch(0.42_0.08_190/0.4)] group-hover:scale-110 transition-transform duration-500">
+                <MessageCircle className="h-5 w-5" />
+              </div>
               <div>
-                <p className="text-sm font-medium">WhatsApp us directly</p>
-                <p className="text-xs text-muted-foreground">+{siteConfig.whatsappNumber}</p>
+                <p className="text-[13px] font-semibold tracking-wide">WhatsApp us directly</p>
+                <p className="text-xs text-muted-foreground mt-0.5">+{siteConfig.whatsappNumber}</p>
               </div>
             </a>
-            <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 rounded-2xl glass p-4 transition hover:bg-white/10">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[oklch(0.7_0.19_50)] to-[oklch(0.55_0.16_30)] text-background"><Mail className="h-4 w-4" /></div>
+            <a href={`mailto:${siteConfig.email}`} className="group flex items-center gap-4 rounded-2xl glass p-5 transition hover:bg-white/[0.08] hover:border-white/20">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[oklch(0.82_0.16_85)] to-[oklch(0.68_0.14_45)] text-white shadow-[0_8px_20px_-6px_oklch(0.82_0.16_85/0.4)] group-hover:scale-110 transition-transform duration-500">
+                <Mail className="h-5 w-5" />
+              </div>
               <div>
-                <p className="text-sm font-medium">Email</p>
-                <p className="text-xs text-muted-foreground">{siteConfig.email}</p>
+                <p className="text-[13px] font-semibold tracking-wide">Business Email</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{siteConfig.email}</p>
               </div>
             </a>
-            <a href={siteConfig.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl glass p-4 transition hover:bg-white/10">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-pink-500 to-orange-400 text-background"><Instagram className="h-4 w-4" /></div>
+            <a href={siteConfig.instagram} target="_blank" rel="noreferrer" className="group flex items-center gap-4 rounded-2xl glass p-5 transition hover:bg-white/[0.08] hover:border-white/20">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white shadow-[0_8px_20px_-6px_rgba(253,29,29,0.4)] group-hover:scale-110 transition-transform duration-500">
+                <Instagram className="h-5 w-5" />
+              </div>
               <div>
-                <p className="text-sm font-medium">Follow the journey</p>
-                <p className="text-xs text-muted-foreground">@wandrstories</p>
+                <p className="text-[13px] font-semibold tracking-wide">Follow the journey</p>
+                <p className="text-xs text-muted-foreground mt-0.5">@{siteConfig.instagram.split("/").filter(Boolean).pop()}</p>
               </div>
             </a>
           </div>
@@ -134,7 +140,7 @@ function ContactPage() {
           <style>{`
             .input { width:100%; background:oklch(1 0 0 / 0.04); border:1px solid oklch(1 0 0 / 0.1); border-radius:0.875rem; padding:0.85rem 1rem; font-size:0.875rem; color:var(--foreground); transition:all .2s; }
             .input::placeholder { color: oklch(0.6 0.01 120); }
-            .input:focus { outline:none; border-color: oklch(0.7 0.19 50 / 0.6); background:oklch(1 0 0 / 0.06); box-shadow: 0 0 0 4px oklch(0.7 0.19 50 / 0.12); }
+            .input:focus { outline:none; border-color: oklch(0.82 0.16 85 / 0.6); background:oklch(1 0 0 / 0.06); box-shadow: 0 0 0 4px oklch(0.82 0.16 85 / 0.12); }
           `}</style>
         </motion.form>
       </div>

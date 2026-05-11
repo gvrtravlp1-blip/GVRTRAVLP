@@ -1,11 +1,10 @@
 {
   "timeline": [
-    { "year": "2021", "title": "The First Trip", "description": "A small group of 6 strangers hiked Skandagiri. That night, a community was born." },
-    { "year": "2022", "title": "Crossing 50 Trips", "description": "We curated experiences across Karnataka and Kerala — from misty hills to hidden coves." },
-    { "year": "2023", "title": "300+ Travelers Strong", "description": "A real community of working professionals who trust us with their weekends." },
     { "year": "2024", "title": "Hidden Gems Series", "description": "We launched our signature offbeat trails — places no tourist map will ever show." },
-    { "year": "2025", "title": "Going Cinematic", "description": "Every trip now comes with a curated photo & film story. Your memories, beautifully captured." },
-    { "year": "2026", "title": "500+ Stories Created", "description": "Half a thousand professionals. One unforgettable weekend at a time." }
+    { "year": "Waterfalls", "title": "Cinematic Falls", "description": "Bhogtha waterfall, Blue waterfall, Katika waterfalls" },
+    { "year": "Trekking", "title": "Peak Explorations", "description": "Ananthagiri hills, Vanjangi, Araku, Koheda gutta" },
+    { "year": "Tourism", "title": "Tourist Spots", "description": "Lambasingi, Bhongiri Fort" },
+    { "year": "Devotional", "title": "Spiritual Journeys", "description": "Tirupati, Yadagiri gutta, Swarnagiri, Arunachalam, Sabarimala" }
   ],
   "memories": [
     { "id": 1, "trip": "Coorg Monsoon", "date": "Aug 2025", "location": "Coorg", "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80", "caption": "When the rain stopped, the sky gave us this." },
@@ -16,6 +15,11 @@
     { "id": 6, "trip": "Munnar Mornings", "date": "Mar 2025", "location": "Munnar", "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80", "caption": "The tea hills woke up before we did." },
     { "id": 7, "trip": "Nandi Sunrise", "date": "Feb 2025", "location": "Nandi Hills", "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&q=80", "caption": "First trip of the year. Best one yet." },
     { "id": 8, "trip": "Ramanagara Camp", "date": "Jan 2025", "location": "Ramanagara", "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80", "caption": "Rappelled down. Made memories that won't fade." },
-    { "id": 9, "trip": "Ooty Pines", "date": "Dec 2024", "location": "Ooty", "image": "https://images.unsplash.com/photo-1597149452039-26ed03b1e0f5?w=1200&q=80", "caption": "The pine forest felt like another planet." }
+    { "id": 9, "trip": "Ooty Pines", "date": "Dec 2024", "location": "Ooty", "image": "https://images.unsplash.com/photo-1597149452039-26ed03b1e0f5?w=1200&q=80", "caption": "The pine forest felt like another planet." },
+    { "id": 10, "trip": "Araku Hidden Trails", "date": "Oct 2025", "location": "Araku", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349120/8997f718-fbab-4990-bcaa-e67c70f43269_kkvfae.jpg", "caption": "Lost in the green heart of Araku." },
+    { "id": 11, "trip": "Bhogtha Falls", "date": "Nov 2025", "location": "Telangana", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349131/a42243c5-d646-43d3-a68a-9b3bb4f5460d_ztvdkr.jpg", "caption": "The raw power of nature captured in a moment." },
+    { "id": 12, "trip": "Vanjangi Heights", "date": "Dec 2025", "location": "Vanjangi", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349162/1ba9f4da-aef6-4bf7-b332-a4e1ea03a3e4_iub73e.jpg", "caption": "Waking up above the clouds at Vanjangi." },
+    { "id": 13, "trip": "Lambasingi Mist", "date": "Jan 2026", "location": "Andhra", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349170/6a4f60a8-4875-406f-a40c-f759fe34e44b_wr4ixe.jpg", "caption": "Cold winds and morning mist in Lambasingi." },
+    { "id": 14, "trip": "Bhongiri Monolith", "date": "Feb 2026", "location": "Bhongiri", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349343/a208bb48-4256-43c2-b7c4-f81f6ba5ce8c_nlo7uw.jpg", "caption": "Scaling the massive boulders of Bhongiri Fort." }
   ]
 }

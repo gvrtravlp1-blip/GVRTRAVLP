@@ -68,13 +68,44 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    // Handle CORS preflight
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        status: 204,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "*",
+          "Access-Control-Max-Age": "86400",
+        },
+      });
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
+      
+      // Add CORS headers to all responses
+      const newHeaders = new Headers(normalizedResponse.headers);
+      newHeaders.set("Access-Control-Allow-Origin", "*");
+      newHeaders.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+      newHeaders.set("Access-Control-Allow-Headers", "*");
+
+      return new Response(normalizedResponse.body, {
+        status: normalizedResponse.status,
+        statusText: normalizedResponse.statusText,
+        headers: newHeaders,
+      });
     } catch (error) {
       console.error(error);
-      return brandedErrorResponse();
+      const errorResponse = brandedErrorResponse();
+      const errorHeaders = new Headers(errorResponse.headers);
+      errorHeaders.set("Access-Control-Allow-Origin", "*");
+      return new Response(errorResponse.body, {
+        status: errorResponse.status,
+        headers: errorHeaders,
+      });
     }
   },
 };

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { X, MapPin, Calendar } from "lucide-react";
 import gallery from "@/data/gallery.json";
 import { SectionTitle, FadeIn } from "@/components/ui-bits";
+import { siteConfig } from "@/config/site";
 import campfireImg from "@/assets/campfire.jpg";
 
 type Memory = { id: number; trip: string; date: string; location: string; image: string; caption: string };
@@ -11,10 +12,10 @@ type Memory = { id: number; trip: string; date: string; location: string; image:
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Travel Memories | WandrStories" },
+      { title: siteConfig.name },
       { name: "description", content: "Cinematic memories from weekend escapes and monthly adventures across South India." },
-      { property: "og:title", content: "Travel Gallery — WandrStories" },
-      { property: "og:description", content: "Travel memories and milestones from our community." },
+      { property: "og:title", content: siteConfig.name },
+      { property: "og:description", content: `Travel memories and milestones from our community at ${siteConfig.name}.` },
     ],
   }),
   component: GalleryPage,
@@ -33,7 +34,7 @@ function GalleryPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
         <div className="container-cinema px-6 md:px-10">
-          <span className="text-xs uppercase tracking-[0.3em] text-[oklch(0.7_0.19_50)]">The archive</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[oklch(0.82_0.16_85)]">The archive</span>
           <h1 className="mt-3 font-display text-5xl leading-[1.05] md:text-7xl">
             Memories from the <span className="text-gradient-sunset">road less travelled.</span>
           </h1>
@@ -43,25 +44,51 @@ function GalleryPage() {
         </div>
       </header>
 
-      <section className="section-padding pt-12">
+      <section className="section-padding">
         <div className="container-cinema">
-          <SectionTitle center={false} eyebrow="Our journey" title="Milestones along the trail" />
-          <div className="relative">
-            <div className="absolute left-3 top-0 h-full w-px bg-gradient-to-b from-[oklch(0.7_0.19_50)] via-border to-transparent md:left-1/2" />
-            <div className="space-y-12">
+          <SectionTitle eyebrow="Our journey" title="The Story So Far" subtitle="A structured record of our community explorations." />
+          
+          <div className="relative mx-auto max-w-5xl mt-16">
+            {/* Center Line - Mobile & Desktop */}
+            <div className="absolute left-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-gradient-to-b from-primary via-border to-transparent" />
+            
+            <div className="space-y-6 md:space-y-0">
               {timeline.map((m, i) => {
-                const left = i % 2 === 0;
+                const isEven = i % 2 === 0;
                 return (
-                  <FadeIn key={m.year}>
-                    <div className={`relative grid md:grid-cols-2 md:gap-12 ${left ? "" : "md:[&>div:first-child]:col-start-2"}`}>
-                      <div className={`relative pl-12 md:pl-0 ${left ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-                        <span className="absolute left-0 top-1.5 grid h-6 w-6 place-items-center rounded-full bg-gradient-to-br from-[oklch(0.7_0.19_50)] to-[oklch(0.55_0.16_30)] text-[10px] font-bold text-background md:left-1/2 md:-translate-x-1/2" style={{ left: left ? undefined : 0 }}>
-                          ●
-                        </span>
-                        <p className="text-xs uppercase tracking-[0.3em] text-[oklch(0.7_0.19_50)]">{m.year}</p>
-                        <h3 className="mt-2 font-display text-2xl md:text-3xl">{m.title}</h3>
-                        <p className="mt-2 text-sm text-muted-foreground">{m.description}</p>
+                  <FadeIn key={i} delay={i * 0.1} y={20}>
+                    <div className={`relative flex flex-row items-center ${isEven ? "flex-row-reverse" : ""} md:mb-[-20px]`}>
+                      {/* Card Container */}
+                      <div className="w-1/2">
+                        <div className={`${isEven ? "pl-4 md:pl-16" : "pr-4 md:pr-16"}`}>
+                          <div className="group relative rounded-2xl md:rounded-[2rem] glass p-4 md:p-10 transition-all hover:bg-white/[0.05] border border-white/5 shadow-2xl">
+                            {/* Year/Category Badge */}
+                            <span className="inline-block text-[8px] md:text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-2 md:mb-4">
+                              {m.year}
+                            </span>
+                            
+                            <h3 className="font-display text-base md:text-3xl leading-tight">
+                              {m.title}
+                            </h3>
+                            
+                            <div className="mt-3 md:mt-6 flex flex-wrap gap-1 md:gap-2">
+                              {m.description.split(", ").map((trip) => (
+                                <span key={trip} className="inline-block rounded-lg bg-white/[0.03] px-2 py-1 text-[9px] md:text-[11px] text-muted-foreground border border-white/5">
+                                  {trip}
+                                </span>
+                              ))}
+                            </div>
+
+                            {/* Background Watermark for Card */}
+                            <div className="absolute -right-4 -bottom-2 pointer-events-none select-none opacity-[0.02] font-display text-6xl uppercase tracking-tighter">
+                              {m.year.slice(0, 4)}
+                            </div>
+                          </div>
+                        </div>
                       </div>
+
+                      {/* Spacer for desktop symmetry */}
+                      <div className="hidden md:block md:w-1/2" />
                     </div>
                   </FadeIn>
                 );
@@ -77,7 +104,7 @@ function GalleryPage() {
           {memories.length === 0 ? (
             <div className="rounded-3xl border border-dashed border-border p-16 text-center text-muted-foreground">No memories yet — first trip coming soon.</div>
           ) : (
-            <div className="columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
+            <div className="columns-3 gap-3 md:gap-5 [&>*]:mb-5">
               {memories.map((m, i) => (
                 <motion.button
                   key={m.id}

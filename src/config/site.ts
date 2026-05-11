@@ -1,8 +1,9 @@
 export const siteConfig = {
-  name: "Wandr Stories",
+  name: "GVRTRAVLP",
   tagline: "Escape the routine. Explore hidden places.",
-  whatsappNumber: "919876543210", // International format, no +
-  email: "hello@wandrstories.in",
-  instagram: "https://instagram.com/wandrstories",
-  youtube: "https://youtube.com/@wandrstories",
+  whatsappNumber: "919390184813",
+  email: "gvrtravlp@gmail.com",
+  instagram: "https://www.instagram.com/gvr_travlp/",
+  youtube: "https://youtube.com/@gvrtravel",
+  logo: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778274017/71046280-96b0-45ea-a354-328f2e6946cc_sjifze.jpg",
 };

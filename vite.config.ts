@@ -12,4 +12,14 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  vite: {
+    server: {
+      allowedHosts: ["aggregable-lakenya-pantonal.ngrok-free.dev", "all"],
+      host: true,
+      hmr: {
+        protocol: "wss",
+        clientPort: 443,
+      },
+    },
+  },
 });

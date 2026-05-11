@@ -74,14 +74,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "WandrStories — Weekend Escapes for Working Professionals" },
+      { title: "GVRTRAVLP" },
       { name: "description", content: "Curated weekend trips and hidden gems around Bangalore & Hyderabad. Travel with strangers, become friends, create stories." },
-      { property: "og:title", content: "WandrStories — Weekend Escapes" },
+      { property: "og:title", content: "GVRTRAVLP" },
       { property: "og:description", content: "Cinematic, curated weekend trips for working professionals." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "icon", href: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778274017/71046280-96b0-45ea-a354-328f2e6946cc_sjifze.jpg" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -107,6 +108,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
     </html>
   );
 }
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

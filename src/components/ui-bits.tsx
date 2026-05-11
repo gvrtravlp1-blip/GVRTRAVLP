@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from "react";
 
 export function SectionTitle({ eyebrow, title, subtitle, center = true }: { eyebrow?: string; title: string; subtitle?: string; center?: boolean }) {
   return (
-    <div className={`mb-16 ${center ? "text-center mx-auto max-w-2xl" : ""}`}>
+    <div className={`mb-8 ${center ? "text-center mx-auto max-w-2xl" : ""}`}>
       {eyebrow && (
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-block text-xs uppercase tracking-[0.3em] text-[oklch(0.7_0.19_50)]"
+          className="inline-block text-xs uppercase tracking-[0.3em] text-[oklch(0.82_0.16_85)]"
         >
           {eyebrow}
         </motion.span>
@@ -61,13 +61,13 @@ export function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   return <span ref={ref}>{val}{suffix}</span>;
 }
 
-export function FadeIn({ children, delay = 0, y = 30 }: { children: React.ReactNode; delay?: number; y?: number }) {
+export function FadeIn({ children, delay = 0, y = 20 }: { children: React.ReactNode; delay?: number; y?: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: "0px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
