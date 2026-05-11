@@ -182,9 +182,9 @@ function Hero() {
         />
       ))}
 
-      <motion.div style={{ opacity }} className="container-cinema relative z-10 flex h-full flex-col justify-center px-6 pt-32 md:px-10">
+      <motion.div style={{ opacity }} className="container-cinema relative z-10 flex h-full flex-col justify-end px-6 pb-40 md:justify-center md:pb-0 md:pt-20 md:px-10">
         <div className="max-w-5xl">
-          <div className="relative min-h-[180px] sm:min-h-[200px] md:min-h-[260px] lg:min-h-[320px]">
+          <div className="relative min-h-[140px] sm:min-h-[150px] md:min-h-[180px] lg:min-h-[220px]">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={idx}
@@ -196,7 +196,7 @@ function Hero() {
                   ease: [0.22, 1, 0.36, 1],
                   scale: { type: "spring", damping: 15, stiffness: 100 }
                 }}
-                className="absolute inset-0 font-display text-[clamp(2.5rem,8vw,7.5rem)] leading-[0.92] tracking-tighter"
+                className="absolute inset-0 font-display text-[clamp(1.8rem,5vw,4.2rem)] leading-[1.05] tracking-tight"
               >
                 {headlines[idx].split(" ").map((word, i) => (
                   <span key={i} className={i % 3 === 2 ? "text-gradient-sunset" : ""}>
