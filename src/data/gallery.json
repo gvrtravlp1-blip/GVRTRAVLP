@@ -20,6 +20,6 @@
     { "id": 11, "trip": "Bhogtha Falls", "date": "Nov 2025", "location": "Telangana", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349131/a42243c5-d646-43d3-a68a-9b3bb4f5460d_ztvdkr.jpg", "caption": "The raw power of nature captured in a moment." },
     { "id": 12, "trip": "Vanjangi Heights", "date": "Dec 2025", "location": "Vanjangi", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349162/1ba9f4da-aef6-4bf7-b332-a4e1ea03a3e4_iub73e.jpg", "caption": "Waking up above the clouds at Vanjangi." },
     { "id": 13, "trip": "Lambasingi Mist", "date": "Jan 2026", "location": "Andhra", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349170/6a4f60a8-4875-406f-a40c-f759fe34e44b_wr4ixe.jpg", "caption": "Cold winds and morning mist in Lambasingi." },
-    { "id": 14, "trip": "Bhongiri Monolith", "date": "Feb 2026", "location": "Bhongiri", "image": "https://res.cloudinary.com/dybpntnhv/image/upload/v1778349343/a208bb48-4256-43c2-b7c4-f81f6ba5ce8c_nlo7uw.jpg", "caption": "Scaling the massive boulders of Bhongiri Fort." }
+    { "id": 14, "trip": "Bhongiri Monolith", "date": "Feb 2026", "location": "Bhongiri", "image": "", "caption": "Scaling the massive boulders of Bhongiri Fort." }
   ]
 }
