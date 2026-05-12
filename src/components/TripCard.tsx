@@ -12,7 +12,6 @@ export type Trip = {
   groupSize: number;
   remainingSlots: number;
   difficulty: string;
-  highlights: string[];
   startDate?: string;
   endDate?: string;
   registrationClose?: string;
@@ -59,16 +58,7 @@ export function TripCard({ trip, variant = "monthly" }: { trip: Trip; variant?: 
             <h3 className="mt-1 font-display text-sm md:text-2xl text-foreground truncate">{trip.title}</h3>
           </div>
         </div>
-
-          <div className="space-y-2.5 md:space-y-4 p-3 md:p-6">
-            <div className="flex flex-wrap gap-1 md:gap-1.5 h-auto md:h-12 overflow-hidden">
-              {trip.highlights.slice(0, 3).map((h) => (
-                <span key={h} className="rounded-full border border-border bg-white/[0.03] px-1.5 py-0.5 text-[8px] md:text-[9px] text-muted-foreground whitespace-nowrap">
-                  {h}
-                </span>
-              ))}
-            </div>
-
+        <div className="space-y-2.5 md:space-y-4 p-3 md:p-6">
           <div className={`grid gap-2 border-y border-border/50 py-1.5 md:py-4 text-[8px] md:text-xs ${variant === "monthly" ? "grid-cols-3" : "grid-cols-2"}`}>
             <div className="flex flex-col gap-0.5">
               <span className="flex items-center gap-1 text-muted-foreground"><Calendar className="h-2.5 w-2.5" />Dur.</span>
@@ -93,7 +83,7 @@ export function TripCard({ trip, variant = "monthly" }: { trip: Trip; variant?: 
 
           <div className="flex items-center justify-between pt-1">
             <div className="flex flex-col">
-              <span className="text-[7px] md:text-[10px] uppercase tracking-widest text-muted-foreground leading-none mb-0.5 md:mb-1">Per Person</span>
+              <span className="text-[7px] md:text-[10px] uppercase tracking-widest text-muted-foreground leading-none mb-0.5 md:mb-1">Adv Booking</span>
               <span className="font-display text-lg md:text-3xl text-foreground leading-none">{trip.price}</span>
             </div>
             <button

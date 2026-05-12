@@ -52,7 +52,7 @@ function TripsPage() {
 
       <section className="px-6 pt-0 pb-16 md:px-10">
         <div className="container-cinema">
-          <SectionTitle center={false} eyebrow="Monthly Adventures" title="Long-form journeys, deep stories." subtitle="Multi-day trips with up to 20 fellow travelers. Time slows down. Friendships form." />
+          <SectionTitle center={false} eyebrow="Monthly Adventures" title="Long-form journeys, deep stories." subtitle="Multi-day trips with up to 20 fellow travelers. Time slows down. Friendships form. Vote For Your Trip Below By Joining" />
           {monthlyTrips.length === 0 ? (
             <EmptyState text="New monthly adventures coming soon." />
           ) : (

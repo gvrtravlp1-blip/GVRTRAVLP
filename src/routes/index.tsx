@@ -379,10 +379,30 @@ function Experience() {
 
 
 const reviews = [
-  { name: "Aarushi Mehta", role: "Product Manager · Bangalore", text: "I went solo, came back with seven friends and a hundred photos I keep looking at. The Coorg trip felt like a cinematic short film.", img: "https://i.pravatar.cc/150?img=47" },
-  { name: "Karthik Iyer", role: "Software Engineer · Hyderabad", text: "Skandagiri night trek was unreal. Tiny group, perfect logistics, zero stress. I was back at my desk Monday feeling reset.", img: "https://i.pravatar.cc/150?img=12" },
-  { name: "Neha Reddy", role: "Designer · Bangalore", text: "Every detail was thought through. The hidden waterfall in Chikmagalur is something I'll never find on Google Maps. I'm hooked.", img: "https://i.pravatar.cc/150?img=32" },
-  { name: "Rahul Bansal", role: "Consultant · Bangalore", text: "Travelled with strangers. Came back with my new weekend gang. GVRTRAVLP doesn't sell trips — they engineer connection.", img: "https://i.pravatar.cc/150?img=15" },
+  { 
+    name: "Sanchita Ghosh", 
+    role: "Traveler", 
+    text: "We believe in progress together we are with GVR", 
+    img: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778614437/WhatsApp_Image_2026-05-13_at_12.26.30_AM_yoc7j1.jpg" 
+  },
+  { 
+    name: "Lokesh", 
+    role: "Petroleum Engineer", 
+    text: "Perfect mix of fun, chaos, deep talks, and unforgettable memories.", 
+    img: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778614438/WhatsApp_Image_2026-05-13_at_12.32.17_AM_jhr8fl.jpg" 
+  },
+  { 
+    name: "Thaman", 
+    role: "Petroleum Engineer", 
+    text: "One thing about GVR trips — you’ll return with stories, not just photos", 
+    img: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778614438/WhatsApp_Image_2026-05-13_at_12.33.45_AM_hcnw8u.jpg" 
+  },
+  { 
+    name: "Krishnan", 
+    role: "Young Entrepreneur", 
+    text: "The planning, the energy, the people… everything felt natural and exciting.", 
+    img: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778614438/WhatsApp_Image_2026-05-13_at_12.34.56_AM_t8nth6.jpg" 
+  },
 ];
 
 function Testimonials() {
