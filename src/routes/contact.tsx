@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { z } from "zod";
-import { MessageCircle, Send, Check, Mail, Instagram } from "lucide-react";
+import { MessageCircle, Send, Check, Mail, Instagram, Youtube } from "lucide-react";
 import nightImg from "@/assets/night-mountain.jpg";
 import { siteConfig } from "@/config/site";
 
@@ -95,6 +95,15 @@ function ContactPage() {
               <div>
                 <p className="text-[13px] font-semibold tracking-wide">Follow the journey</p>
                 <p className="text-xs text-muted-foreground mt-0.5">@{siteConfig.instagram.split("/").filter(Boolean).pop()}</p>
+              </div>
+            </a>
+            <a href={siteConfig.youtube} target="_blank" rel="noreferrer" className="group flex items-center gap-4 rounded-2xl glass p-5 transition hover:bg-white/[0.08] hover:border-white/20">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[#ff0000] to-[#cc0000] text-white shadow-[0_8px_20px_-6px_rgba(255,0,0,0.4)] group-hover:scale-110 transition-transform duration-500">
+                <Youtube className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-[13px] font-semibold tracking-wide">Watch on YouTube</p>
+                <p className="text-xs text-muted-foreground mt-0.5">@GVRTRAVLP</p>
               </div>
             </a>
           </div>

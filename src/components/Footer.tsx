@@ -37,6 +37,7 @@ export function Footer() {
           <div className="mt-2 md:mt-5 flex gap-2 md:gap-3">
             <a href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="grid h-8 w-8 md:h-11 md:w-11 place-items-center rounded-full glass transition hover:scale-110 hover:text-[oklch(0.7_0.19_50)]"><MessageCircle className="h-3.5 w-3.5 md:h-4 md:w-4" /></a>
             <a href={siteConfig.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="grid h-8 w-8 md:h-11 md:w-11 place-items-center rounded-full glass transition hover:scale-110 hover:text-[oklch(0.7_0.19_50)]"><Instagram className="h-3.5 w-3.5 md:h-4 md:w-4" /></a>
+            <a href={siteConfig.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="grid h-8 w-8 md:h-11 md:w-11 place-items-center rounded-full glass transition hover:scale-110 hover:text-[oklch(0.7_0.19_50)]"><Youtube className="h-3.5 w-3.5 md:h-4 md:w-4" /></a>
           </div>
           <div className="mt-3 md:mt-6 space-y-1 md:space-y-2">
             <p className="text-[10px] md:text-xs text-muted-foreground transition hover:text-foreground">{siteConfig.email}</p>

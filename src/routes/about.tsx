@@ -32,7 +32,7 @@ function AboutPage() {
     <>
       <header className="relative h-[60svh] md:h-[80svh] min-h-[400px] md:min-h-[520px] w-full overflow-hidden">
         <img 
-          src="https://res.cloudinary.com/dybpntnhv/image/upload/v1778330254/7148f2c5-4df7-4f6e-abc5-87f9a0cd3660_h1mfnx.jpg" 
+          src="https://res.cloudinary.com/dybpntnhv/image/upload/v1778562637/bf988531-009e-4243-8786-03addfe43f9a_arlcqo.jpg" 
           alt="Founder Travel Influencer" 
           className="absolute inset-0 h-full w-full object-cover object-[32%_25%]" 
         />
