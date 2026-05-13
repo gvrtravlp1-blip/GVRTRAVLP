@@ -9,10 +9,17 @@ import { siteConfig } from "@/config/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: siteConfig.name },
-      { name: "description", content: "Turning weekend escapes into life stories. Helping professionals rediscover adventure." },
-      { property: "og:title", content: siteConfig.name },
-      { property: "og:description", content: `The story behind ${siteConfig.name} — built by a traveler, for travelers.` },
+      { title: `Our Story | GVRTRAVLP - Building a Community of Adventure Seekers` },
+      { name: "description", content: "Learn about the mission behind GVRTRAVLP. Built by a traveler for travelers, we turn weekend escapes into life stories for professionals in South India." },
+      { name: "keywords", content: "GVRTRAVLP community, travel group Bangalore, adventure travel India, weekend stories, travel for professionals" },
+      { property: "og:title", content: `The Story Behind GVRTRAVLP | Cinematic Travel` },
+      { property: "og:description", content: "Rediscover adventure and build a community with every weekend trip." },
+      { property: "og:url", content: `${siteConfig.url}/about` },
+      { property: "og:image", content: `${siteConfig.url}${siteConfig.ogImage}` },
+    ],
+    links: [
+      { rel: "canonical", href: `${siteConfig.url}/about` },
+      { rel: "preload", href: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778562637/bf988531-009e-4243-8786-03addfe43f9a_arlcqo.jpg", as: "image" },
     ],
   }),
   component: AboutPage,
@@ -33,7 +40,9 @@ function AboutPage() {
       <header className="relative h-[60svh] md:h-[80svh] min-h-[400px] md:min-h-[520px] w-full overflow-hidden">
         <img 
           src="https://res.cloudinary.com/dybpntnhv/image/upload/v1778562637/bf988531-009e-4243-8786-03addfe43f9a_arlcqo.jpg" 
-          alt="Founder Travel Influencer" 
+          alt="GVRTRAVLP Founder exploring mountain trails" 
+          decoding="async"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover object-[32%_25%]" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background" />
@@ -99,7 +108,9 @@ function AboutPage() {
               <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-cinema aspect-[4/5] lg:aspect-auto lg:h-[600px]">
                 <img 
                   src="https://res.cloudinary.com/dybpntnhv/image/upload/v1778274372/f4580d9f-c141-42b2-afc3-8554e7315bfa_e5sryh.jpg" 
-                  alt="Influencer Founder" 
+                  alt="GVRTRAVLP Founder: Built by a traveler for travelers" 
+                  decoding="async"
+                  loading="lazy"
                   className="h-full w-full object-cover object-[32%_30%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
@@ -196,7 +207,7 @@ function AboutPage() {
       </section>
 
       <section className="relative overflow-hidden">
-        <img src={campfireImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" loading="lazy" />
+        <img src={campfireImg} alt="Community campfire under the stars" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-40" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
         <div className="container-cinema relative px-6 py-24 text-center md:px-10 md:py-32">
           <FadeIn>

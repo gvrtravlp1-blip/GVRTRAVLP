@@ -10,10 +10,17 @@ import roadImg from "@/assets/road-trip.jpg";
 export const Route = createFileRoute("/trips")({
   head: () => ({
     meta: [
-      { title: siteConfig.name },
-      { name: "description", content: "Browse upcoming monthly adventures and weekend escapes around Bangalore & Hyderabad." },
-      { property: "og:title", content: siteConfig.name },
-      { property: "og:description", content: "Curated weekend escapes and monthly adventures." },
+      { title: `Upcoming Weekend Trips from Bangalore & Hyderabad | ${siteConfig.name}` },
+      { name: "description", content: "Discover upcoming trekking trips, hidden gems, and weekend adventures from Bangalore and Hyderabad. Join our small, curated groups for unforgettable experiences." },
+      { name: "keywords", content: "trekking trips Karnataka, weekend trips from Bangalore, weekend trips Hyderabad, hidden places near Bangalore, group travel India" },
+      { property: "og:title", content: `Pick Your Next Adventure | ${siteConfig.name}` },
+      { property: "og:description", content: "Monthly adventures and weekend escapes designed for working professionals." },
+      { property: "og:url", content: `${siteConfig.url}/trips` },
+      { property: "og:image", content: `${siteConfig.url}${siteConfig.ogImage}` },
+    ],
+    links: [
+      { rel: "canonical", href: `${siteConfig.url}/trips` },
+      { rel: "preload", href: roadImg, as: "image" },
     ],
   }),
   component: TripsPage,
@@ -27,7 +34,7 @@ function TripsPage() {
     <>
       <header className="relative overflow-hidden pt-24 pb-8 md:pt-28 md:pb-12">
         <div className="absolute inset-0 -z-10">
-          <img src={roadImg} alt="" className="h-full w-full object-cover" />
+          <img src={roadImg} alt="Scenic open road for travel adventures" decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
         </div>
         <div className="container-cinema px-6 md:px-10">

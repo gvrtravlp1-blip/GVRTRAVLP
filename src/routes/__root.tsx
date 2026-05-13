@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { siteConfig } from "@/config/site";
 
 function NotFoundComponent() {
   return (
@@ -74,15 +75,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GVRTRAVLP" },
-      { name: "description", content: "Curated weekend trips and hidden gems around Bangalore & Hyderabad. Travel with strangers, become friends, create stories." },
-      { property: "og:title", content: "GVRTRAVLP" },
-      { property: "og:description", content: "Cinematic, curated weekend trips for working professionals." },
+      { title: siteConfig.name },
+      { name: "description", content: siteConfig.description },
+      { name: "keywords", content: siteConfig.keywords.join(", ") },
+      { property: "og:title", content: siteConfig.name },
+      { property: "og:description", content: siteConfig.tagline },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: siteConfig.url },
+      { property: "og:image", content: `${siteConfig.url}${siteConfig.ogImage}` },
+      { property: "og:site_name", content: siteConfig.name },
     ],
     links: [
-      { rel: "icon", href: "https://res.cloudinary.com/dybpntnhv/image/upload/v1778274017/71046280-96b0-45ea-a354-328f2e6946cc_sjifze.jpg" },
+      { rel: "canonical", href: siteConfig.url },
+      { rel: "icon", href: siteConfig.logo },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -96,10 +101,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": siteConfig.name,
+    "url": siteConfig.url,
+    "logo": siteConfig.logo,
+    "sameAs": [
+      siteConfig.instagram,
+      siteConfig.youtube,
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": siteConfig.whatsappNumber,
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body>
         {children}

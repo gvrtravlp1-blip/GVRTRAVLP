@@ -12,10 +12,17 @@ import { siteConfig } from "@/config/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: siteConfig.name },
-      { name: "description", content: `Cinematic curated weekend trips around Bangalore & Hyderabad. Travel with strangers, become friends, create stories with ${siteConfig.name}.` },
-      { property: "og:title", content: `${siteConfig.name} — Weekend Escapes` },
-      { property: "og:description", content: "Escape routine. Explore hidden gems. Meet new people." },
+      { title: `${siteConfig.name} | Weekend Trips & Hidden Experiences from Bangalore & Hyderabad` },
+      { name: "description", content: "Explore curated weekend trips, trekking adventures, and hidden destinations around Bangalore and Hyderabad. Join a community of working professionals creating cinematic life stories." },
+      { name: "keywords", content: "GVRTRAVLP, weekend trips from Bangalore, hidden places near Bangalore, trekking trips Karnataka, weekend trips Hyderabad, adventure travel India" },
+      { property: "og:title", content: `${siteConfig.name} | Cinematic Weekend Adventures` },
+      { property: "og:description", content: "Escape the routine. Explore hidden places with a community of like-minded travelers." },
+      { property: "og:url", content: siteConfig.url },
+      { property: "og:image", content: `${siteConfig.url}${siteConfig.ogImage}` },
+    ],
+    links: [
+      { rel: "canonical", href: siteConfig.url },
+      { rel: "preload", href: heroImg, as: "image" },
     ],
   }),
   component: HomePage,
@@ -93,7 +100,7 @@ function GalleryPreview() {
               whileHover={{ y: -6, scale: 1.02 }}
               className="shrink-0 w-[180px] md:w-[360px] aspect-[4/5] rounded-xl md:rounded-[2rem] overflow-hidden border border-white/10 group/item relative bg-muted cursor-pointer"
             >
-              <img src={src} alt={`Gallery ${i}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110" />
+              <img src={src} alt={`GVRTRAVLP Memory ${i + 1}`} decoding="async" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-6 left-6 opacity-0 group-hover/item:opacity-100 transition-all duration-300 translate-y-4 group-hover/item:translate-y-0">
                 <p className="text-white text-xs font-medium flex items-center gap-2">
@@ -156,7 +163,7 @@ function Hero() {
   return (
     <section ref={ref} className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0">
-        <img src={heroImg} alt="Misty mountain sunrise" className="h-[120%] w-full object-cover scale-[1.1]" />
+        <img src={heroImg} alt="Cinematic misty mountain sunrise in Western Ghats" decoding="async" fetchPriority="high" className="h-[120%] w-full object-cover scale-[1.1]" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-transparent" />
@@ -349,8 +356,9 @@ function Experience() {
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 1.5, ease: "easeOut" }}
                       src={s.img} 
-                      alt={s.title} 
+                      alt={`GVRTRAVLP Experience: ${s.title}`} 
                       loading="lazy" 
+                      decoding="async"
                       className="absolute inset-0 h-full w-full object-cover" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -435,7 +443,7 @@ function Testimonials() {
                   “{reviews[active].text}”
                 </p>
                 <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-3">
-                  <img src={reviews[active].img} alt="" className="h-12 w-12 rounded-full border border-border object-cover" />
+                  <img src={reviews[active].img} alt={`Traveler ${reviews[active].name}`} decoding="async" loading="lazy" className="h-12 w-12 rounded-full border border-border object-cover" />
                   <div className="text-left">
                     <p className="text-sm md:text-base font-medium text-foreground">{reviews[active].name}</p>
                     <p className="text-[10px] md:text-xs text-muted-foreground">{reviews[active].role}</p>

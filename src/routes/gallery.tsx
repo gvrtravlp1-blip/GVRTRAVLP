@@ -12,10 +12,17 @@ type Memory = { id: number; trip: string; date: string; location: string; image:
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: siteConfig.name },
-      { name: "description", content: "Cinematic memories from weekend escapes and monthly adventures across South India." },
-      { property: "og:title", content: siteConfig.name },
-      { property: "og:description", content: `Travel memories and milestones from our community at ${siteConfig.name}.` },
+      { title: `Captured Memories & Stories | GVRTRAVLP Travel Gallery` },
+      { name: "description", content: "Step inside the journey. Explore cinematic photos and stories from our recent weekend escapes and monthly adventures across South India." },
+      { name: "keywords", content: "travel gallery India, cinematic travel photos, GVRTRAVLP memories, weekend trip photos, South India destinations" },
+      { property: "og:title", content: `Travel Stories in Photos | GVRTRAVLP` },
+      { property: "og:description", content: "Every face, every fire, every sunrise. The story of a community built one weekend at a time." },
+      { property: "og:url", content: `${siteConfig.url}/gallery` },
+      { property: "og:image", content: `${siteConfig.url}${siteConfig.ogImage}` },
+    ],
+    links: [
+      { rel: "canonical", href: `${siteConfig.url}/gallery` },
+      { rel: "preload", href: campfireImg, as: "image" },
     ],
   }),
   component: GalleryPage,
@@ -30,7 +37,7 @@ function GalleryPage() {
     <>
       <header className="relative overflow-hidden pt-32 pb-12">
         <div className="absolute inset-0 -z-10">
-          <img src={campfireImg} alt="" className="h-full w-full object-cover opacity-50" />
+          <img src={campfireImg} alt="Night campfire representing GVRTRAVLP community" decoding="async" fetchPriority="high" className="h-full w-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
         <div className="container-cinema px-6 md:px-10">
@@ -116,7 +123,7 @@ function GalleryPage() {
                   transition={{ delay: (i % 6) * 0.06, duration: 0.6 }}
                   className="group relative block w-full overflow-hidden rounded-2xl border border-border break-inside-avoid"
                 >
-                  <img src={m.image} alt={m.caption} loading="lazy" className="w-full transition-transform duration-700 ease-out group-hover:scale-110" />
+                  <img src={m.image} alt={`Memory from ${m.trip} at ${m.location}: ${m.caption}`} decoding="async" loading="lazy" className="w-full transition-transform duration-700 ease-out group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent opacity-0 transition group-hover:opacity-100" />
                   <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
                     <p className="text-[10px] uppercase tracking-[0.2em] text-[oklch(0.78_0.18_55)]">{m.location}</p>
@@ -142,7 +149,7 @@ function GalleryPage() {
               onClick={(e) => e.stopPropagation()}
               className="w-full max-w-4xl overflow-hidden rounded-3xl border border-border bg-card"
             >
-              <img src={open.image} alt={open.caption} className="aspect-video w-full object-cover" />
+              <img src={open.image} alt={open.caption} decoding="async" className="aspect-video w-full object-cover" />
               <div className="p-6">
                 <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1"><MapPin className="h-3 w-3" />{open.location}</span>

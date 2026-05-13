@@ -9,10 +9,17 @@ import { siteConfig } from "@/config/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: siteConfig.name },
-      { name: "description", content: "Plan your next weekend escape. Reach us on WhatsApp or share a trip suggestion." },
-      { property: "og:title", content: siteConfig.name },
-      { property: "og:description", content: "Tell us where you want to go." },
+      { title: `Contact Us | Plan Your Next Adventure with GVRTRAVLP` },
+      { name: "description", content: "Have a trip idea or want to join an upcoming escape? Contact GVRTRAVLP via WhatsApp or email. We respond quickly to help you plan your perfect weekend." },
+      { name: "keywords", content: "contact GVRTRAVLP, travel inquiries, weekend trip suggestions, WhatsApp travel group, Bangalore travel contact" },
+      { property: "og:title", content: `Get in Touch | GVRTRAVLP` },
+      { property: "og:description", content: "Tell us where you want to go next. Join our community on WhatsApp." },
+      { property: "og:url", content: `${siteConfig.url}/contact` },
+      { property: "og:image", content: `${siteConfig.url}${siteConfig.ogImage}` },
+    ],
+    links: [
+      { rel: "canonical", href: `${siteConfig.url}/contact` },
+      { rel: "preload", href: nightImg, as: "image" },
     ],
   }),
   component: ContactPage,
@@ -57,7 +64,7 @@ function ContactPage() {
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden pt-32">
-      <img src={nightImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-50" />
+      <img src={nightImg} alt="Starry night mountain scene" decoding="async" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover opacity-50" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/85 to-background" />
 
       <div className="container-cinema relative grid gap-12 px-6 pb-32 md:grid-cols-2 md:px-10">

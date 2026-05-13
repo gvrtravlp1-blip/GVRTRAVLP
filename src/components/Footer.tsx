@@ -9,7 +9,7 @@ export function Footer() {
         <div className="md:col-span-2 max-w-md">
           <Link to="/" className="flex items-center gap-3">
             <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-full border-2 border-primary/20 bg-white p-0.5 shadow-lg">
-              <img src={siteConfig.logo} alt={siteConfig.name} className="h-full w-full rounded-full object-cover" />
+              <img src={siteConfig.logo} alt={`${siteConfig.name} Logo`} decoding="async" loading="lazy" className="h-full w-full rounded-full object-cover" />
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-display text-lg md:text-2xl tracking-tight text-white">{siteConfig.name}</span>
